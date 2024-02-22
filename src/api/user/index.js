@@ -10,7 +10,7 @@ authRouter.use(bodyParser.json());
 // Lấy tất cả các tài khoản
 authRouter.get("/list-user", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM users");
+    const result = await pool.query('SELECT * FROM public."user"');
     res.json(result.rows);
   } catch (error) {
     console.error(error);
